@@ -14,13 +14,15 @@ import Login from './components/pages/Auth/Login';
 import Register from './components/pages/Auth/Register';
 import Home from './components/pages/Home';
 
-
+/*context*/
+import { UserProvider } from "./context/UserContext";
 
 function App() {
   return (
 
     
     <BrowserRouter>
+    <UserProvider>
     <Navbar/>
     <Container>
     <Routes>
@@ -34,6 +36,7 @@ function App() {
     </Routes>
     </Container>
     <Footer/>
+    </UserProvider>
     </BrowserRouter>
   );
 }
