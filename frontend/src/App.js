@@ -13,6 +13,7 @@ import Message from "./components/layout/Message";
 import Login from './components/pages/Auth/Login';
 import Register from './components/pages/Auth/Register';
 import Home from './components/pages/Home';
+import Profile from "./components/pages/User/Profile";
 
 /*context*/
 import { UserProvider } from "./context/UserContext";
@@ -31,7 +32,10 @@ function App() {
         <Route path='/login' element={<Login/>}/>
           
         <Route path='/register' element={<Register/>}/>
-      
+
+        <Route path='/user/profile' element={<Profile/>}/>
+
+
         <Route path='/' element={<Home/>}/>
               
     </Routes>
