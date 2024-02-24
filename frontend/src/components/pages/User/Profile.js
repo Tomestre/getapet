@@ -6,11 +6,12 @@ import {useState, useEffect} from 'react'
 import api from '../../../utils/api'
 
 import useFlashMessage from '../../../hooks/useFlashMessage'
+import RoundedImage from '../../layout/RoundedImage'
 
 function Profile(){
 
     const [user, setUser]= useState({})
-    const [preview, setPreview]= useState('')
+    const [preview, setPreview]= useState()
     const [token] = useState(localStorage.getItem('token')|| '')
     const {setFlashMessage} = useFlashMessage()
 
@@ -71,8 +72,9 @@ function Profile(){
         <section>
             <div className={styles.profile_header}>
                 <h1>Perfil</h1>
-                {(user.image || preview)&&(
-                    <img src={
+                {(user.image || preview) && (
+                    <RoundedImage 
+                    src={
                         preview 
                         ? URL.createObjectURL(preview) 
                         : `${process.env.REACT_APP_API}/images/users/${user.image}`
