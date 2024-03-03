@@ -64,7 +64,7 @@ function Profile(){
                 return err.response.data
             })
         
-        console.log(data)
+        
         setFlashMessage(data.message, msgType)
     }
 
